@@ -1,21 +1,4 @@
-$primary-color: #6b717f;
-$secondary-color: #8C8C8C;
-$general-background: #fff;
-$article-background: #000;
-$title-color: #BF4080;
-$success-color: green;
-$error-color: red;
-$warning-color: orange;
-
-%sew {
-    border: 1px solid $secondary-color;
-    padding: 16px;
-    color: $general-background;
-}
-
-%h {
-    color: $title-color;
-}
+@import 'variables.scss'
 
 body {
     font: 100% "Space Mono", monospace;
@@ -77,29 +60,13 @@ body {
                     }
                 }
 
-                .messages {
-                    padding: 16px;
                 
-                    .success {
-                        @extend %sew;
-                        background-color: $success-color;
-                    }
-                    
-                    .error {
-                        @extend %sew;
-                        background-color: $error-color;
-                            &:hover {
-                                background-color: $success-color
-                            }
-                    }
-                    
-                    .warning {
-                        @extend %sew;
-                        background-color: $warning-color;
-                        }
-                }
         }
     }
+}
+
+%h {
+    color: $title-color;
 }
 
 h1 {
@@ -119,5 +86,32 @@ h3 {
     margin-bottom: 0px;
 }
 
+.messages {
+    padding: 16px;
+    
+    %sew {
+        border: 1px solid $secondary-color;
+        padding: 16px;
+        color: $general-background;
+    }
+
+    .success {
+        @extend %sew;
+        background-color: $success-color;
+    }
+    
+    .error {
+        @extend %sew;
+        background-color: $error-color;
+            &:hover {
+                background-color: $success-color
+            }
+    }
+    
+    .warning {
+        @extend %sew;
+        background-color: $warning-color;
+        }
+}
 
 
