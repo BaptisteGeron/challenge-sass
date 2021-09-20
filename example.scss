@@ -4,7 +4,7 @@ body {
     font: 100% "Space Mono", monospace;
     color: $primary-color;
     margin: 0;
-    padding: 0;
+    padding: $general-padding;
     background-color: $general-background;
     overflow-x: hidden;
 
@@ -15,14 +15,18 @@ body {
             display: flex;
             flex-wrap: wrap;
 
+                @mixin shadowmix ($smix) {
+                    -webkit-box-shadow: 10px 10px 15px -4px $smix;
+                    -moz-box-shadow: 10px 10px 15px -4px $smix;
+                    box-shadow: 10px 10px 15px -4px $smix;   
+                }
+
                 section {
                 flex-grow: 1;
                 flex-basis: 45%;
                 border: 1px $secondary-color solid;
-                -webkit-box-shadow: 10px 10px 15px -4px $primary-color;
-                -moz-box-shadow: 10px 10px 15px -4px $primary-color;
-                box-shadow: 10px 10px 15px -4px $primary-color;
-                padding: 16px;
+                @include shadowmix ($primary-color);
+                padding: $general-padding;
                 margin: 16px;
                 clear: both;
                 overflow: auto;
@@ -45,19 +49,9 @@ body {
                     margin-bottom: 1.6em;
                     max-width: 100%;
                     overflow: auto;
-                    padding: 1em 1.5em;
+                    padding: $general-padding;
                     display: block;
                     word-wrap: break-word;
-
-                    .before {
-                        float: left;
-                        width: 40%;
-                    }
-                    
-                    .after {
-                        float: right;
-                        width: 40%;
-                    }
                 }
 
                 
@@ -82,7 +76,7 @@ h3 {
     @extend %h;
     text-align: center;
     font-size: 1.5em;
-    padding: 32px;
+    padding: $general-padding;
     margin-bottom: 0px;
 }
 
@@ -114,6 +108,17 @@ h3 {
         }
 }
 
+.before {
+    float: left;
+    width: 40%;
+}
 
+.after {
+    float: right;
+    width: 40%;
+}
 
+footer h3{
+    padding: ($general-padding*2);
+}
 
