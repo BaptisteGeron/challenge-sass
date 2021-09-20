@@ -7,13 +7,14 @@ body {
     padding: $general-padding;
     background-color: $general-background;
     overflow-x: hidden;
+}
 
     main {
         padding: 0 1em;
-
-        article {
-            display: flex;
-            flex-wrap: wrap;
+    }
+    article {
+        display: flex;
+        flex-wrap: wrap;
 
                 @mixin shadowmix ($smix) {
                     -webkit-box-shadow: 10px 10px 15px -4px $smix;
@@ -56,8 +57,8 @@ body {
 
                 
         }
-    }
-}
+
+/*Titles*/
 
 %h {
     color: $title-color;
@@ -79,6 +80,8 @@ h3 {
     padding: $general-padding;
     margin-bottom: 0px;
 }
+
+/*Messages*/
 
 %sew {
     border: 1px solid $secondary-color;
@@ -108,6 +111,8 @@ h3 {
         }
 }
 
+/*Code*/
+
 .before {
     float: left;
     width: 40%;
@@ -118,7 +123,22 @@ h3 {
     width: 40%;
 }
 
+/*footer padding twice*/
+
 footer h3{
     padding: ($general-padding*2);
 }
 
+
+/*loop*/
+
+.advantages {
+    @for $i from 1 through 6 {
+       /* background-color: rgba(0, 132, 255, (1/$i));*/
+        li:nth-child(#{$i}) {
+         background-color: lighten($title-color, $i*5%);
+         color: lighten($color: $article-background, $amount: $i*10%) ;
+        }
+      }
+    
+}
