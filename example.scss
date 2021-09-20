@@ -1,15 +1,4 @@
-$primary-color: #6b717f;
-$secondary-color: #8C8C8C;
-$general-background: #fff;
-$article-background: #000;
-$title-color: #BF4080;
-$success-color: green;
-$error-color: red;
-$warning-color: orange;
-
-
-
-
+@import "_variables.scss";
 
 body {
     font: 100% "Space Mono", monospace;
@@ -59,6 +48,16 @@ body {
                     padding: 1em 1.5em;
                     display: block;
                     word-wrap: break-word;
+
+                    .before {
+                        float: left;
+                        width: 40%;
+                    }
+                    
+                    .after {
+                        float: right;
+                        width: 40%;
+                    }
                 }
 
                 
@@ -115,14 +114,6 @@ h3 {
         }
 }
 
-.before {
-    float: left;
-    width: 40%;
-}
 
-.after {
-    float: right;
-    width: 40%;
-}
 
 
